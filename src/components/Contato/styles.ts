@@ -23,7 +23,7 @@ export const CardTarefaTitulo = styled.h3`
 `
 
 export const InputInformacoes = styled.input`
-  color: #626b77;
+  color: #404142ff;
   font-size: 16px;
   line-height: 24px;
   font-family: 'Inter', sans-serif;
@@ -36,8 +36,7 @@ export const InputInformacoes = styled.input`
   outline: none;
 
   &:disabled {
-    color: #a0a0a0; /* cor do texto quando desabilitado */
-    -webkit-text-fill-color: #a0a0a0; /* compatibilidade com Chrome/Safari */
+    color: #626b77;
     opacity: 1; /* evita o "esbranquiçado" padrão */
   }
 `
