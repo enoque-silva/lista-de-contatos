@@ -1,7 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-import * as enums from '../../utils/enums/Tarefas'
-import Tarefa from '../../models/Tarefa'
+import Tarefa from '../../models/Contato'
 
 type TarefasState = {
   itens: Tarefa[]
@@ -11,30 +9,39 @@ const initialState: TarefasState = {
   itens: [
     {
       id: 1,
-      titulo: 'Tarefa 1',
-      descricao: 'Descrição da tarefa 1',
-      prioridade: enums.Prioridade.IMPORTANTE,
-      status: enums.Status.PENDENTE
+      nome: 'Maria Silva',
+      email: 'maria.silva@email.com',
+      telefone: '(11) 98765-4321'
     },
     {
       id: 2,
-      titulo: 'Tarefa 2',
-      descricao: 'Descrição da tarefa 2',
-      prioridade: enums.Prioridade.NORMAL,
-      status: enums.Status.PENDENTE
+      nome: 'Karla Nascimento',
+      email: 'karla.n@creative.agency',
+      telefone: '(21) 89876-5432'
     },
     {
       id: 3,
-      titulo: 'Tarefa 3',
-      descricao: 'Descrição da tarefa 3',
-      prioridade: enums.Prioridade.URGENTE,
-      status: enums.Status.CONCLUIDA
+      nome: 'Gabriela Martins',
+      email: 'gabi.martins@health.care',
+      telefone: '(71) 93210-9876'
+    },
+    {
+      id: 4,
+      nome: 'Bruno Lima',
+      email: 'bruno.lima@email.com',
+      telefone: '(21) 99876-5432'
+    },
+    {
+      id: 5,
+      nome: 'Carla Souza',
+      email: 'carla.souza@email.com',
+      telefone: '(31) 97654-3210'
     }
   ]
 }
 
-const tarefasSlice = createSlice({
-  name: 'tarefas',
+const contatosSlice = createSlice({
+  name: 'contatos',
   initialState,
   reducers: {
     remover: (state, action: PayloadAction<number>) => {
@@ -53,11 +60,11 @@ const tarefasSlice = createSlice({
     cadastrar: (state, action: PayloadAction<Omit<Tarefa, 'id'>>) => {
       const tarefaJaExiste = state.itens.find(
         (tarefa) =>
-          tarefa.titulo.toLocaleLowerCase() ===
-          action.payload.titulo.toLocaleLowerCase()
+          tarefa.nome.toLocaleLowerCase() ===
+          action.payload.nome.toLocaleLowerCase()
       )
       if (tarefaJaExiste) {
-        alert('Já existe uma tarefa com esse título!')
+        alert('Já existe um contato com esse nome!')
       } else {
         const ultimaTarefa = state.itens[state.itens.length - 1]
         const tarefaNova = {
@@ -66,22 +73,9 @@ const tarefasSlice = createSlice({
         }
         state.itens.push(tarefaNova)
       }
-    },
-    alteraStatus: (
-      state,
-      action: PayloadAction<{ id: number; finalizado: boolean }>
-    ) => {
-      const indexTarefa = state.itens.findIndex(
-        (t) => t.id === action.payload.id
-      )
-      if (indexTarefa >= 0) {
-        state.itens[indexTarefa].status = action.payload.finalizado
-          ? enums.Status.CONCLUIDA
-          : enums.Status.PENDENTE
-      }
     }
   }
 })
 
-export const { remover, editar, cadastrar, alteraStatus } = tarefasSlice.actions
-export default tarefasSlice.reducer
+export const { remover, editar, cadastrar } = contatosSlice.actions
+export default contatosSlice.reducer

@@ -5,7 +5,7 @@ import filtroReducer from './reducers/filtro'
 
 const store = configureStore({
   reducer: {
-    tarefas: tarefasReducer,
+    contatos: tarefasReducer,
     filtro: filtroReducer
   }
 })
