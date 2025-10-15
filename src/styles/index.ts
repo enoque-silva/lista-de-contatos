@@ -27,7 +27,7 @@ export const Container = styled.div`
 export const MainContainer = styled.main`
   flex: 1;
   overflow-y: auto;
-  margin-top: 120px;
+  margin-top: 90px;
   padding: 0 32px;
 `
 export const Titulo = styled.h2`
