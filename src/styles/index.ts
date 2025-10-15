@@ -85,6 +85,7 @@ export const BotaoCadastrar = styled(Botao)`
   color: ${variaveis.azulSecundario};
   background-color: ${variaveis.azulPrimario};
   transition: all 0.3s ease;
+  margin-right: 0;
 
   &:hover {
     opacity: 0.9;
@@ -101,6 +102,7 @@ export const BotaoVoltar = styled(BotaoCadastrar)`
   margin-top: 8px;
   background-color: #f3f4f6;
   color: #374151;
+  margin-right: 0;
 
   &:hover {
     background-color: #e5e7eb;
