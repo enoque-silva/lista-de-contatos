@@ -20,6 +20,7 @@ export const CardTarefaTitulo = styled.h3`
   font-size: 20px;
   border: transparent;
   outline: none;
+  background-color: transparent;
 `
 
 export const InputInformacoes = styled.input`
