@@ -84,14 +84,14 @@ const Contato = ({
         )}
       </label>
       <S.InputInformacoes
-        // disabled={!estaEditando}
+        disabled={!estaEditando}
         type="email"
         value={email}
         placeholder="Email"
         onChange={(evento) => setEmail(evento.target.value)}
       />
       <S.InputInformacoes
-        // disabled={!estaEditando}
+        disabled={!estaEditando}
         type="tel"
         value={telefone}
         placeholder="Telefone"

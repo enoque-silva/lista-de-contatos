@@ -34,6 +34,12 @@ export const InputInformacoes = styled.input`
   border: none;
   background-color: transparent;
   outline: none;
+
+  &:disabled {
+    color: #a0a0a0; /* cor do texto quando desabilitado */
+    -webkit-text-fill-color: #a0a0a0; /* compatibilidade com Chrome/Safari */
+    opacity: 1; /* evita o "esbranquiçado" padrão */
+  }
 `
 
 export const CardTarefaBarraDosBotoes = styled.div`
