@@ -37,7 +37,7 @@ export const InputInformacoes = styled.input`
 
   &:disabled {
     color: #626b77;
-    opacity: 1; /* evita o "esbranquiçado" padrão */
+    opacity: 1;
   }
 `
 
